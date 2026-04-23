@@ -1,13 +1,15 @@
 /* ============================================
-   OPTION 3: BOLD/COLORFUL - "ELECTRIC ENERGY"
-   Main JavaScript
-   
+   OPTION 3: BOLD/COLORFUL — "ELECTRIC ENERGY"
+   Main JavaScript (Redesigned)
+
    Features:
-   - Navbar scroll effect (glassmorphism)
+   - Navbar scroll effect (glassmorphism on scroll)
    - Mobile hamburger menu toggle
-   - Scroll-triggered fade-in animations
+   - Scroll-triggered fade-in animations (IntersectionObserver)
    - Smooth scroll for anchor links
-   - Parallax effect on floating blobs
+   - Mouse-reactive gradient mesh (subtle parallax on hero)
+
+   No external libraries required — pure vanilla JS.
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,12 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar    = document.getElementById('navbar');
   const navToggle = document.getElementById('nav-toggle');
   const navLinks  = document.getElementById('nav-links');
+  const heroMesh  = document.querySelector('.hero-mesh');
 
   // ============================================
-  // NAVBAR: Add glassmorphism background on scroll
-  // CUSTOMIZE: Change the scroll threshold (50)
+  // NAVBAR: Glass background on scroll
+  // CUSTOMIZE: Change SCROLL_THRESHOLD to trigger
+  // the background earlier or later
   // ============================================
-  const SCROLL_THRESHOLD = 50;
+  const SCROLL_THRESHOLD = 60;
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > SCROLL_THRESHOLD) {
@@ -29,17 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       navbar.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
 
   // ============================================
-  // MOBILE MENU: Toggle hamburger menu
+  // MOBILE MENU: Toggle hamburger
   // ============================================
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
   });
 
-  // Close mobile menu when a link is clicked
+  // Close menu when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
@@ -48,16 +52,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================
-  // SCROLL ANIMATIONS: Intersection Observer
-  // Elements with .fade-in class will animate
+  // MOUSE-REACTIVE MESH
+  // The gradient mesh shifts subtly based on
+  // cursor position for a living, breathing feel.
   //
-  // CUSTOMIZE: Adjust 'threshold' (0.15) to change
-  // when the animation triggers
+  // CUSTOMIZE: Adjust MOVE_AMOUNT (px) for more
+  // or less movement. Set to 0 to disable.
+  // ============================================
+  const MOVE_AMOUNT = 20; // max pixels of shift
+
+  if (heroMesh && window.matchMedia('(hover: hover)').matches) {
+    document.addEventListener('mousemove', (e) => {
+      // Normalize mouse position to -1...1
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      // Apply a gentle transform to the mesh
+      heroMesh.style.transform =
+        `translate(${x * MOVE_AMOUNT}px, ${y * MOVE_AMOUNT}px)`;
+    });
+  }
+
+  // ============================================
+  // SCROLL ANIMATIONS: IntersectionObserver
+  // Elements with .fade-in class will animate
+  // when they scroll into view.
+  //
+  // CUSTOMIZE: Adjust threshold (0.12) to change
+  // how much must be visible before triggering
   // ============================================
   const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.15
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.12
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -72,26 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   // ============================================
-  // PARALLAX: Subtle parallax on floating blobs
-  // The blobs move slightly based on scroll position
-  //
-  // CUSTOMIZE: Adjust the multiplier (0.3) to make
-  // the parallax effect more or less pronounced
-  // ============================================
-  const blobs = document.querySelectorAll('.blob');
-  const PARALLAX_SPEED = 0.3;
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    blobs.forEach((blob, index) => {
-      // Each blob moves at a slightly different speed
-      const speed = PARALLAX_SPEED * (index + 1) * 0.5;
-      blob.style.transform = `translateY(${scrollY * speed}px)`;
-    });
-  });
-
-  // ============================================
-  // SMOOTH SCROLL: Anchor link scrolling
+  // SMOOTH SCROLL: Anchor links
   // ============================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

@@ -16,11 +16,12 @@
   <meta property="og:image" content="images/placeholder-hero.jpg">
 
   <!-- ============================================
-       Google Fonts - Outfit (headings) + DM Sans (body)
+       Google Fonts - Syne (body/nav) 
+       A distinctive contemporary grotesque with character
        ============================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome - Social media icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -32,7 +33,7 @@
 
   <!-- ============================================
        NAVIGATION
-       Glassmorphism fixed nav
+       Minimal fixed nav — logo left, links right
        ============================================ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -53,81 +54,111 @@
 
   <!-- ============================================
        HERO SECTION
-       Animated gradient background with bold text
+       Full viewport with animated gradient mesh,
+       geometric line decorations, and the artist
+       name in Benton Mod Display Black
        ============================================ -->
   <section class="hero" id="hero">
-    <div class="hero-bg-gradient" aria-hidden="true"></div>
-    <!-- Floating blobs for dynamic visual interest -->
-    <div class="floating-blobs" aria-hidden="true">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-    </div>
+    <!-- Animated gradient mesh background -->
+    <div class="hero-mesh" aria-hidden="true"></div>
+
+    <!-- Geometric line decorations -->
+    <svg class="hero-lines" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <line x1="0" y1="300" x2="1440" y2="100" />
+      <line x1="0" y1="500" x2="1440" y2="350" />
+      <line x1="0" y1="700" x2="1440" y2="600" />
+      <line x1="200" y1="0" x2="400" y2="900" />
+      <line x1="800" y1="0" x2="1000" y2="900" />
+      <line x1="1200" y1="0" x2="1100" y2="900" />
+    </svg>
+
+    <!-- Grain overlay for texture -->
+    <div class="grain" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <h1 class="hero-title gradient-text">SPROUTED</h1>
-      <p class="hero-tagline">Fresh Energy. Every Set.</p>
+      <p class="hero-super">DJ &middot; Producer &middot; Curator</p>
+      <h1 class="hero-title">SPROUTED</h1>
+      <div class="hero-bottom">
+        <span class="hero-line-accent" aria-hidden="true"></span>
+        <p class="hero-tagline">Fresh energy, every set</p>
+        <span class="hero-line-accent" aria-hidden="true"></span>
+      </div>
       <a href="#connect" class="hero-cta">Explore</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
     </div>
   </section>
 
   <!-- ============================================
        ABOUT SECTION
-       Glassmorphism card on gradient background
+       Asymmetric layout — large pull-quote style
        UPDATE: Replace placeholder text with real bio
        ============================================ -->
   <section class="about" id="about">
     <div class="container">
-      <h2 class="section-title gradient-text">About</h2>
-      <div class="glass-card about-content fade-in">
-        <p>
-          <!-- UPDATE: Replace this with the real bio -->
-          Sprouted is a dynamic DJ bringing fresh energy to every set.
-          Blending genres and pushing boundaries, Sprouted creates
-          unforgettable experiences on the dancefloor. From underground
-          venues to festival stages, the sound is always evolving &mdash;
-          rooted in passion, grown from the groove.
-        </p>
+      <div class="about-layout">
+        <div class="about-label fade-in">
+          <span class="label-text">About</span>
+          <span class="label-line" aria-hidden="true"></span>
+        </div>
+        <div class="about-content fade-in">
+          <blockquote class="about-quote">
+            <!-- UPDATE: Replace this with the real bio -->
+            Sprouted is a dynamic DJ bringing fresh energy to every set.
+            Blending genres and pushing boundaries, Sprouted creates
+            unforgettable experiences on the dancefloor.
+          </blockquote>
+          <p class="about-body">
+            From underground venues to festival stages, the sound is always
+            evolving &mdash; rooted in passion, grown from the groove.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================
        GALLERY SECTION
-       Photos with gradient overlay hover effects
+       Asymmetric masonry-ish grid with mixed sizes
        UPDATE: Replace placeholder divs with real <img> tags
        Example: <img src="images/your-photo.jpg" alt="Sprouted performing" loading="lazy">
        ============================================ -->
   <section class="gallery" id="gallery">
     <div class="container">
-      <h2 class="section-title gradient-text">Gallery</h2>
+      <div class="gallery-header fade-in">
+        <span class="label-text">Gallery</span>
+        <span class="label-line" aria-hidden="true"></span>
+      </div>
       <div class="gallery-grid">
-        <!-- Photo 1 - UPDATE: Replace with real image -->
-        <div class="gallery-item fade-in">
-          <div class="placeholder-img placeholder-1" role="img" aria-label="Sprouted performing"></div>
+        <!-- Photo 1 — wide (spans 2 cols) UPDATE: Replace with real image -->
+        <div class="gallery-item gallery-wide fade-in">
+          <div class="placeholder-img placeholder-1" role="img" aria-label="Sprouted performing at a venue"></div>
           <div class="gallery-overlay"></div>
         </div>
-        <!-- Photo 2 - UPDATE: Replace with real image -->
-        <div class="gallery-item fade-in">
+        <!-- Photo 2 — tall UPDATE: Replace with real image -->
+        <div class="gallery-item gallery-tall fade-in">
           <div class="placeholder-img placeholder-2" role="img" aria-label="Sprouted at the decks"></div>
           <div class="gallery-overlay"></div>
         </div>
-        <!-- Photo 3 - UPDATE: Replace with real image -->
+        <!-- Photo 3 — standard UPDATE: Replace with real image -->
         <div class="gallery-item fade-in">
           <div class="placeholder-img placeholder-3" role="img" aria-label="Sprouted on stage"></div>
           <div class="gallery-overlay"></div>
         </div>
-        <!-- Photo 4 - UPDATE: Replace with real image -->
+        <!-- Photo 4 — standard UPDATE: Replace with real image -->
         <div class="gallery-item fade-in">
           <div class="placeholder-img placeholder-4" role="img" aria-label="Sprouted with crowd"></div>
           <div class="gallery-overlay"></div>
         </div>
-        <!-- Photo 5 - UPDATE: Replace with real image -->
-        <div class="gallery-item fade-in">
+        <!-- Photo 5 — wide (spans 2 cols) UPDATE: Replace with real image -->
+        <div class="gallery-item gallery-wide fade-in">
           <div class="placeholder-img placeholder-5" role="img" aria-label="Sprouted studio session"></div>
           <div class="gallery-overlay"></div>
         </div>
-        <!-- Photo 6 - UPDATE: Replace with real image -->
+        <!-- Photo 6 — standard UPDATE: Replace with real image -->
         <div class="gallery-item fade-in">
           <div class="placeholder-img placeholder-6" role="img" aria-label="Sprouted promo shot"></div>
           <div class="gallery-overlay"></div>
@@ -138,47 +169,40 @@
 
   <!-- ============================================
        CONNECT SECTION
-       Gradient social icons with pop animations
+       Horizontal social strip with gradient line
        UPDATE: Replace # with real social media URLs
        ============================================ -->
   <section class="connect" id="connect">
     <div class="container">
-      <h2 class="section-title gradient-text">Connect</h2>
+      <div class="connect-header fade-in">
+        <span class="label-text">Connect</span>
+        <span class="label-line" aria-hidden="true"></span>
+      </div>
       <div class="social-links fade-in">
         <!-- UPDATE: Replace # with real Instagram URL -->
         <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <div class="social-icon-wrapper">
-            <i class="fab fa-instagram"></i>
-          </div>
-          <span>Instagram</span>
+          <i class="fab fa-instagram"></i>
+          <span class="social-name">Instagram</span>
         </a>
         <!-- UPDATE: Replace # with real Spotify URL -->
         <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
-          <div class="social-icon-wrapper">
-            <i class="fab fa-spotify"></i>
-          </div>
-          <span>Spotify</span>
+          <i class="fab fa-spotify"></i>
+          <span class="social-name">Spotify</span>
         </a>
         <!-- UPDATE: Replace # with real Apple Music URL -->
         <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Apple Music">
-          <div class="social-icon-wrapper">
-            <i class="fab fa-apple"></i>
-          </div>
-          <span>Apple Music</span>
+          <i class="fab fa-apple"></i>
+          <span class="social-name">Apple Music</span>
         </a>
         <!-- UPDATE: Replace # with real SoundCloud URL -->
         <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
-          <div class="social-icon-wrapper">
-            <i class="fab fa-soundcloud"></i>
-          </div>
-          <span>SoundCloud</span>
+          <i class="fab fa-soundcloud"></i>
+          <span class="social-name">SoundCloud</span>
         </a>
         <!-- UPDATE: Replace # with real YouTube URL -->
         <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <div class="social-icon-wrapper">
-            <i class="fab fa-youtube"></i>
-          </div>
-          <span>YouTube</span>
+          <i class="fab fa-youtube"></i>
+          <span class="social-name">YouTube</span>
         </a>
       </div>
     </div>
@@ -189,8 +213,11 @@
        ============================================ -->
   <footer class="footer">
     <div class="container">
-      <!-- UPDATE: Change year and name as needed -->
-      <p>&copy; 2025 Sprouted. All rights reserved.</p>
+      <div class="footer-inner">
+        <p class="footer-name">Sprouted</p>
+        <!-- UPDATE: Change year as needed -->
+        <p class="footer-copy">&copy; 2025</p>
+      </div>
     </div>
   </footer>
 
