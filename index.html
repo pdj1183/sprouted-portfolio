@@ -5,19 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ============================================
-       SEO & Social Sharing Meta Tags
-       UPDATE: Replace with real content/images
+       GOOGLE ANALYTICS 4
+       UPDATE: Replace G-XXXXXXXXXX with your real
+       Measurement ID from analytics.google.com
        ============================================ -->
-  <title>Sprouted - DJ Portfolio</title>
-  <meta name="description" content="Sprouted - Dynamic DJ bringing fresh energy to every set. Blending genres and pushing boundaries.">
-  <meta property="og:title" content="Sprouted - DJ Portfolio">
-  <meta property="og:description" content="Dynamic DJ bringing fresh energy to every set.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="images/larimer-lounge-april-2026-hero.jpg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
   <!-- ============================================
-       Google Fonts - Syne (body/nav) 
-       A distinctive contemporary grotesque with character
+       SEO
+       ============================================ -->
+  <title>Sprouted — DJ & Producer | Denver, CO</title>
+  <meta name="description" content="Sprouted is a Denver-based DJ and producer blending genres and bringing fresh energy to every set. Catch upcoming shows and explore the gallery.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pdj1183.github.io/sprouted-portfolio/">
+
+  <!-- Open Graph (Facebook, iMessage, Discord previews) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://pdj1183.github.io/sprouted-portfolio/">
+  <meta property="og:title"       content="Sprouted — DJ & Producer | Denver, CO">
+  <meta property="og:description" content="Denver-based DJ and producer blending genres and bringing fresh energy to every set.">
+  <meta property="og:image"       content="https://pdj1183.github.io/sprouted-portfolio/images/larimer-lounge-april-2026-hero.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Sprouted — DJ & Producer | Denver, CO">
+  <meta name="twitter:description" content="Denver-based DJ and producer blending genres and bringing fresh energy to every set.">
+  <meta name="twitter:image"       content="https://pdj1183.github.io/sprouted-portfolio/images/larimer-lounge-april-2026-hero.jpg">
+
+  <!-- ============================================
+       STRUCTURED DATA (JSON-LD)
+       Tells Google this is a music artist page.
+       UPDATE: Fill in sameAs URLs as you add profiles.
+       ============================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Sprouted",
+    "url": "https://pdj1183.github.io/sprouted-portfolio/",
+    "image": "https://pdj1183.github.io/sprouted-portfolio/images/larimer-lounge-april-2026-hero.jpg",
+    "description": "Denver-based DJ and producer blending genres and bringing fresh energy to every set.",
+    "genre": ["Electronic", "DJ"],
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Denver, CO"
+    },
+    "sameAs": [
+      "https://www.instagram.com/sprouted.wav/",
+      "https://open.spotify.com/artist/4QMm6CEPl2YcZuNPsOyFKK",
+      "https://music.apple.com/us/artist/sprouted/1806417380",
+      "https://on.soundcloud.com/CdDY82bx5MFRLRWQ7",
+      "https://www.youtube.com/@Sprouted_wav",
+      "https://sprouted.bandcamp.com/follow_me",
+      "https://linktr.ee/sprouted.wav"
+    ]
+  }
+  </script>
+
+  <!-- ============================================
+       Google Fonts - Syne (body/nav)
        ============================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +80,9 @@
 
   <!-- Font Awesome - Social media icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">

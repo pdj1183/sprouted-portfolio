@@ -5,11 +5,13 @@
   },
   "shows": [
     { "date": "Apr 2, 2026", "venue": "Larimer Lounge", "city": "Denver, CO" },
-    { "date": "Feb 15, 2026", "venue": "Black Box", "city": "Denver, CO" }
+    { "date": "Feb 15, 2026", "venue": "Black Box", "city": "Denver, CO" },
+    { "date": "August 9, 2025", "venue": "Black Box", "city": "Denver, CO" },
+    { "date": "July 23, 2025", "venue": "Black Box", "city": "Denver, CO" }
   ],
   "gallery": [
     {
-      "title": "Larimer Lounge — April 2026",
+      "title": "Larimer Lounge",
       "photos": [
         {
           "src": "images/larimer-lounge-april-2026-1.jpg",
@@ -35,14 +37,65 @@
           "src": "images/larimer-lounge-april-2026-5.jpg",
           "alt": "Sprouted at Larimer Lounge",
           "orientation": "vertical"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-6.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "vertical"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-7.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "vertical"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-8.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "horizontal"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-hero.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "vertical"
         }
       ]
     },
     {
-      "title": "Black Box — February 2026",
+      "title": "Black Box",
       "photos": [
         {
           "src": "images/black-box-february-2026-1.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "vertical"
+        },
+        {
+          "src": "images/black-box-august-2025-2.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "vertical"
+        },
+        {
+          "src": "images/black-box-july-2025-1.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "vertical"
+        },
+        {
+          "src": "images/black-box-february-2026-landing.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "horizontal"
+        },
+
+        {
+          "src": "images/black-box-august-2025-1.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "horizontal"
+        },
+        {
+          "src": "images/black-box-july-2025-2.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "horizontal"
+        },
+        {
+          "src": "images/black-box-july-2025-3.jpg",
           "alt": "Sprouted performing at Black Box",
           "orientation": "vertical"
         }

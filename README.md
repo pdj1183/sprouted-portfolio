@@ -47,12 +47,12 @@ To add a new show, copy an existing line and change the values. Keep the comma a
 
 ### Gallery
 
-The gallery is organized into groups (by venue/date). Each group has a title and an array of photos:
+The gallery is organized into groups by venue. Each group has a title and an array of photos — all photos from the same venue go under one group regardless of date:
 
 ```json
 "gallery": [
   {
-    "title": "Larimer Lounge — April 2026",
+    "title": "Larimer Lounge",
     "photos": [
       { "src": "images/larimer-lounge-april-2026-1.jpg", "alt": "Description", "orientation": "horizontal" }
     ]
@@ -94,6 +94,26 @@ sprouted-portfolio/
   images/           — All gallery and hero photos
   archive/          — Old design options (kept for reference)
 ```
+
+## Google Analytics Setup
+
+The site has GA4 tracking pre-wired with a placeholder ID. To activate it:
+
+1. Go to [analytics.google.com](https://analytics.google.com) and sign in
+2. Click **Admin** (bottom left) → **Create** → **Property**
+3. Follow the setup flow — choose "Web", enter the site URL
+4. When you reach **Data Streams**, copy your **Measurement ID** (format: `G-XXXXXXXXXX`)
+5. In `index.html`, replace both instances of `G-XXXXXXXXXX` with your real ID:
+
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  ...
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+```
+
+Once live, visit your GA4 dashboard → **Reports** → **Realtime** to confirm hits are coming in.
 
 ## GitHub Pages Setup
 
