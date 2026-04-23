@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar    = document.getElementById('navbar');
   const navToggle = document.getElementById('nav-toggle');
   const navLinks  = document.getElementById('nav-links');
-  const heroMesh  = document.querySelector('.hero-mesh');
 
   // ============================================
   // NAVBAR: Glass background on scroll
@@ -50,28 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('active');
     });
   });
-
-  // ============================================
-  // MOUSE-REACTIVE MESH
-  // The gradient mesh shifts subtly based on
-  // cursor position for a living, breathing feel.
-  //
-  // CUSTOMIZE: Adjust MOVE_AMOUNT (px) for more
-  // or less movement. Set to 0 to disable.
-  // ============================================
-  const MOVE_AMOUNT = 20; // max pixels of shift
-
-  if (heroMesh && window.matchMedia('(hover: hover)').matches) {
-    document.addEventListener('mousemove', (e) => {
-      // Normalize mouse position to -1...1
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-      // Apply a gentle transform to the mesh
-      heroMesh.style.transform =
-        `translate(${x * MOVE_AMOUNT}px, ${y * MOVE_AMOUNT}px)`;
-    });
-  }
 
   // ============================================
   // SCROLL ANIMATIONS: IntersectionObserver

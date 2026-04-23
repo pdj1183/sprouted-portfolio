@@ -251,78 +251,57 @@ img {
   overflow: hidden;
 }
 
-/* ---- Animated gradient mesh ----
-   Replaces the floating blobs with a smoother,
-   more refined atmospheric background
-   CUSTOMIZE: Change gradient stops and animation duration */
-.hero-mesh {
+/* ---- Background photo with Ken Burns slow zoom ----
+   UPDATE: Change the image path if you rename the file.
+   CUSTOMIZE: Adjust animation-duration (30s) for faster/slower zoom.
+   Longer = more subtle. Shorter = more noticeable. */
+.hero-photo {
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(139, 92, 246, 0.25), transparent),
-    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(236, 72, 153, 0.18), transparent),
-    radial-gradient(ellipse 70% 50% at 60% 80%, rgba(249, 115, 22, 0.12), transparent),
-    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(139, 92, 246, 0.10), transparent);
-  animation: mesh-drift 20s ease-in-out infinite alternate;
+  inset: -8%;          /* slightly oversized so the zoom never reveals edges */
+  background-image: url('../images/Landing 1.jpg');
+  background-size: cover;
+  background-position: center 30%;  /* keeps Sprouted in frame */
+  animation: ken-burns 30s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-@keyframes mesh-drift {
-  0% {
-    background:
-      radial-gradient(ellipse 80% 60% at 20% 40%, rgba(139, 92, 246, 0.25), transparent),
-      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(236, 72, 153, 0.18), transparent),
-      radial-gradient(ellipse 70% 50% at 60% 80%, rgba(249, 115, 22, 0.12), transparent),
-      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(139, 92, 246, 0.10), transparent);
-  }
-  33% {
-    background:
-      radial-gradient(ellipse 70% 70% at 40% 30%, rgba(236, 72, 153, 0.22), transparent),
-      radial-gradient(ellipse 80% 60% at 70% 60%, rgba(139, 92, 246, 0.20), transparent),
-      radial-gradient(ellipse 50% 70% at 20% 70%, rgba(249, 115, 22, 0.15), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 20%, rgba(236, 72, 153, 0.08), transparent);
-  }
-  66% {
-    background:
-      radial-gradient(ellipse 60% 80% at 60% 50%, rgba(249, 115, 22, 0.20), transparent),
-      radial-gradient(ellipse 70% 50% at 30% 20%, rgba(139, 92, 246, 0.18), transparent),
-      radial-gradient(ellipse 80% 60% at 80% 80%, rgba(236, 72, 153, 0.15), transparent),
-      radial-gradient(ellipse 40% 50% at 50% 10%, rgba(139, 92, 246, 0.10), transparent);
-  }
-  100% {
-    background:
-      radial-gradient(ellipse 80% 60% at 30% 50%, rgba(139, 92, 246, 0.28), transparent),
-      radial-gradient(ellipse 50% 70% at 75% 40%, rgba(236, 72, 153, 0.15), transparent),
-      radial-gradient(ellipse 60% 60% at 50% 75%, rgba(249, 115, 22, 0.18), transparent),
-      radial-gradient(ellipse 70% 40% at 15% 15%, rgba(236, 72, 153, 0.10), transparent);
-  }
+/* Smooth, continuous zoom — no start/end jerk
+   Alternate direction means it eases in and out naturally */
+@keyframes ken-burns {
+  from { transform: scale(1);    }
+  to   { transform: scale(1.08); }
 }
 
-/* ---- Geometric line decorations ----
-   Thin diagonal lines for structure and depth */
-.hero-lines {
+/* ---- Layered overlay ----
+   Three layers working together:
+   1. Colour tint — deepens the existing magentas/purples in the photo
+   2. Vignette — darkens edges so text pops at all viewport sizes
+   3. Bottom gradient — hard fade to page background colour for smooth section transition */
+.hero-overlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: 1;
-  pointer-events: none;
-}
-
-.hero-lines line {
-  stroke: rgba(255, 255, 255, 0.03);
-  stroke-width: 1;
-}
-
-/* ---- Film grain overlay ---- */
-.grain {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 0.035;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px;
+  background:
+    /* 1. Colour tint — amplifies the photo's own palette */
+    linear-gradient(
+      135deg,
+      rgba(80, 20, 120, 0.45) 0%,
+      rgba(180, 30, 120, 0.25) 50%,
+      rgba(30, 10, 60, 0.50) 100%
+    ),
+    /* 2. Radial vignette — pulls focus to centre */
+    radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      rgba(0, 0, 0, 0.55) 100%
+    ),
+    /* 3. Bottom fade — smooth transition into the page background */
+    linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(12, 10, 26, 0.85) 85%,
+      var(--bg-deep) 100%
+    );
 }
 
 /* ---- Hero Content ---- */
