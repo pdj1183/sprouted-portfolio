@@ -97,23 +97,9 @@ sprouted-portfolio/
 
 ## Google Analytics Setup
 
-The site has GA4 tracking pre-wired with a placeholder ID. To activate it:
+GA4 tracking is active with Measurement ID `G-MBD76BQLNK`. View data at [analytics.google.com](https://analytics.google.com).
 
-1. Go to [analytics.google.com](https://analytics.google.com) and sign in
-2. Click **Admin** (bottom left) → **Create** → **Property**
-3. Follow the setup flow — choose "Web", enter the site URL
-4. When you reach **Data Streams**, copy your **Measurement ID** (format: `G-XXXXXXXXXX`)
-5. In `index.html`, replace both instances of `G-XXXXXXXXXX` with your real ID:
-
-```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  ...
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-```
-
-Once live, visit your GA4 dashboard → **Reports** → **Realtime** to confirm hits are coming in.
+Once the site is live, visit your GA4 dashboard → **Reports** → **Realtime** to confirm hits are coming in.
 
 ## GitHub Pages Setup
 
