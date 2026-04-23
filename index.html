@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprouted - Portfolio Design Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 3rem;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .option-card {
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .option-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Option 1: Dark/Club */
+    .card-dark {
+      background: linear-gradient(135deg, #0a0a0a, #1a0b2e);
+      border: 1px solid rgba(0, 255, 245, 0.3);
+    }
+    .card-dark:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 245, 0.2);
+    }
+    .card-dark .card-number { color: #00fff5; }
+
+    /* Option 2: Clean/Minimal */
+    .card-minimal {
+      background: #f8f8f8;
+      color: #111;
+      border: 1px solid #e0e0e0;
+    }
+    .card-minimal:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    .card-minimal .card-number { color: #999; }
+    .card-minimal .card-desc { color: #555; }
+
+    /* Option 3: Bold/Colorful */
+    .card-bold {
+      background: linear-gradient(135deg, #1e1b4b, #581c87);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+    .card-bold:hover {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+    .card-bold .card-number {
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      color: #555;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sprouted</h1>
+  <p class="subtitle">Choose a design template</p>
+
+  <div class="options">
+    <a href="option-1/" class="option-card card-dark">
+      <div class="card-number">Option 1</div>
+      <div class="card-title">Neon Nights</div>
+      <div class="card-desc">Dark/Club aesthetic with neon cyan and magenta glow effects</div>
+    </a>
+
+    <a href="option-2/" class="option-card card-minimal">
+      <div class="card-number">Option 2</div>
+      <div class="card-title">Pure Focus</div>
+      <div class="card-desc">Clean, minimal design with generous whitespace and editorial feel</div>
+    </a>
+
+    <a href="option-3/" class="option-card card-bold">
+      <div class="card-number">Option 3</div>
+      <div class="card-title">Electric Energy</div>
+      <div class="card-desc">Bold gradients, glassmorphism cards, and animated backgrounds</div>
+    </a>
+  </div>
+
+  <p class="footer-note">Click a card to preview each design</p>
+</body>
+</html>
