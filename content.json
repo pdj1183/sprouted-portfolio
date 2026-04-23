@@ -1,0 +1,52 @@
+{
+  "about": {
+    "quote": "Sprouted is a dynamic DJ bringing fresh energy to every set. Blending genres and pushing boundaries, Sprouted creates unforgettable experiences on the dancefloor.",
+    "body": "From underground venues to festival stages, the sound is always evolving — rooted in passion, grown from the groove."
+  },
+  "shows": [
+    { "date": "Apr 2, 2026", "venue": "Larimer Lounge", "city": "Denver, CO" },
+    { "date": "Feb 15, 2026", "venue": "Black Box", "city": "Denver, CO" }
+  ],
+  "gallery": [
+    {
+      "title": "Larimer Lounge — April 2026",
+      "photos": [
+        {
+          "src": "images/larimer-lounge-april-2026-1.jpg",
+          "alt": "Sprouted performing at Larimer Lounge",
+          "orientation": "horizontal"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-2.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "horizontal"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-3.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "horizontal"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-4.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "vertical"
+        },
+        {
+          "src": "images/larimer-lounge-april-2026-5.jpg",
+          "alt": "Sprouted at Larimer Lounge",
+          "orientation": "vertical"
+        }
+      ]
+    },
+    {
+      "title": "Black Box — February 2026",
+      "photos": [
+        {
+          "src": "images/black-box-february-2026-1.jpg",
+          "alt": "Sprouted performing at Black Box",
+          "orientation": "vertical"
+        }
+      ]
+    }
+  ]
+}

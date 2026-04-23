@@ -3,155 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sprouted - Portfolio Design Options</title>
+
+  <!-- ============================================
+       SEO & Social Sharing Meta Tags
+       UPDATE: Replace with real content/images
+       ============================================ -->
+  <title>Sprouted - DJ Portfolio</title>
+  <meta name="description" content="Sprouted - Dynamic DJ bringing fresh energy to every set. Blending genres and pushing boundaries.">
+  <meta property="og:title" content="Sprouted - DJ Portfolio">
+  <meta property="og:description" content="Dynamic DJ bringing fresh energy to every set.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/larimer-lounge-april-2026-hero.jpg">
+
+  <!-- ============================================
+       Google Fonts - Syne (body/nav) 
+       A distinctive contemporary grotesque with character
+       ============================================ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
+  <!-- Font Awesome - Social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    h1 {
-      font-size: 2rem;
-      font-weight: 300;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .subtitle {
-      color: #888;
-      font-size: 0.9rem;
-      margin-bottom: 3rem;
-    }
-
-    .options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    .option-card {
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .option-card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Option 1: Dark/Club */
-    .card-dark {
-      background: linear-gradient(135deg, #0a0a0a, #1a0b2e);
-      border: 1px solid rgba(0, 255, 245, 0.3);
-    }
-    .card-dark:hover {
-      box-shadow: 0 0 30px rgba(0, 255, 245, 0.2);
-    }
-    .card-dark .card-number { color: #00fff5; }
-
-    /* Option 2: Clean/Minimal */
-    .card-minimal {
-      background: #f8f8f8;
-      color: #111;
-      border: 1px solid #e0e0e0;
-    }
-    .card-minimal:hover {
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-    .card-minimal .card-number { color: #999; }
-    .card-minimal .card-desc { color: #555; }
-
-    /* Option 3: Bold/Colorful */
-    .card-bold {
-      background: linear-gradient(135deg, #1e1b4b, #581c87);
-      border: 1px solid rgba(139, 92, 246, 0.3);
-    }
-    .card-bold:hover {
-      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
-    }
-    .card-bold .card-number {
-      background: linear-gradient(135deg, #8B5CF6, #EC4899);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .card-number {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 1rem;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-desc {
-      font-size: 0.85rem;
-      font-weight: 300;
-      opacity: 0.8;
-      line-height: 1.6;
-    }
-
-    .footer-note {
-      margin-top: 3rem;
-      color: #555;
-      font-size: 0.8rem;
-      text-align: center;
-    }
-  </style>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Sprouted</h1>
-  <p class="subtitle">Choose a design template</p>
 
-  <div class="options">
-    <a href="option-1/" class="option-card card-dark">
-      <div class="card-number">Option 1</div>
-      <div class="card-title">Neon Nights</div>
-      <div class="card-desc">Dark/Club aesthetic with neon cyan and magenta glow effects</div>
-    </a>
+  <!-- ============================================
+       NAVIGATION
+       Minimal fixed nav — logo left, links right
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Sprouted</a>
 
-    <a href="option-2/" class="option-card card-minimal">
-      <div class="card-number">Option 2</div>
-      <div class="card-title">Pure Focus</div>
-      <div class="card-desc">Clean, minimal design with generous whitespace and editorial feel</div>
-    </a>
+      <!-- Mobile hamburger button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
 
-    <a href="option-3/" class="option-card card-bold">
-      <div class="card-number">Option 3</div>
-      <div class="card-title">Electric Energy</div>
-      <div class="card-desc">Bold gradients, glassmorphism cards, and animated backgrounds</div>
-    </a>
-  </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#shows">Shows</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <p class="footer-note">Click a card to preview each design</p>
+  <!-- ============================================
+       HERO SECTION
+       Full-viewport photo background with Ken Burns
+       animation and layered gradient overlay
+       ============================================ -->
+  <section class="hero" id="hero">
+    <!-- Background photo — Ken Burns slow zoom -->
+    <div class="hero-photo" aria-hidden="true"></div>
+
+    <!-- Layered overlay: color tint + bottom fade for text legibility -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-super">DJ &middot; Producer &middot; Curator</p>
+      <h1 class="hero-title">SPROUTED</h1>
+      <div class="hero-bottom">
+        <span class="hero-line-accent" aria-hidden="true"></span>
+        <p class="hero-tagline">Fresh energy, every set</p>
+        <span class="hero-line-accent" aria-hidden="true"></span>
+      </div>
+      <a href="#connect" class="hero-cta">Explore</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT SECTION
+       Asymmetric layout — large pull-quote style
+       UPDATE: Replace placeholder text with real bio
+       ============================================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-label fade-in">
+          <span class="label-text">About</span>
+          <span class="label-line" aria-hidden="true"></span>
+        </div>
+        <div class="about-content fade-in" id="about-content">
+          <!-- Loaded from content.json -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SHOWS TIMELINE
+       Loaded from content.json
+       ============================================ -->
+  <section class="shows" id="shows">
+    <div class="container">
+      <div class="shows-header fade-in">
+        <span class="label-text">Shows</span>
+        <span class="label-line" aria-hidden="true"></span>
+      </div>
+      <div class="timeline" id="timeline-content">
+        <!-- Loaded from content.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GALLERY SECTION
+       Grouped by venue/date
+       ============================================ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery-header fade-in">
+        <span class="label-text">Gallery</span>
+        <span class="label-line" aria-hidden="true"></span>
+      </div>
+
+      <!-- Gallery groups loaded from content.json -->
+      <div id="gallery-content"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONNECT SECTION
+       Horizontal social strip with gradient line
+       UPDATE: Replace # with real social media URLs
+       ============================================ -->
+  <section class="connect" id="connect">
+    <div class="container">
+      <div class="connect-header fade-in">
+        <span class="label-text">Connect</span>
+        <span class="label-line" aria-hidden="true"></span>
+      </div>
+      <div class="social-links fade-in">
+        <a href="https://www.instagram.com/sprouted.wav/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+          <span class="social-name">Instagram</span>
+        </a>
+        <a href="https://open.spotify.com/artist/4QMm6CEPl2YcZuNPsOyFKK" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+          <i class="fab fa-spotify"></i>
+          <span class="social-name">Spotify</span>
+        </a>
+        <a href="https://music.apple.com/us/artist/sprouted/1806417380" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Apple Music">
+          <i class="fab fa-apple"></i>
+          <span class="social-name">Apple Music</span>
+        </a>
+        <a href="https://on.soundcloud.com/CdDY82bx5MFRLRWQ7" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
+          <i class="fab fa-soundcloud"></i>
+          <span class="social-name">SoundCloud</span>
+        </a>
+        <a href="https://www.youtube.com/@Sprouted_wav" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+          <span class="social-name">YouTube</span>
+        </a>
+        <a href="https://sprouted.bandcamp.com/follow_me" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Bandcamp">
+          <i class="fab fa-bandcamp"></i>
+          <span class="social-name">Bandcamp</span>
+        </a>
+        <a href="https://linktr.ee/sprouted.wav?utm_source=linktree_admin_share&utm_medium=social&utm_content=link_in_bio" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+          <i class="fas fa-link"></i>
+          <span class="social-name">Linktree</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-name">Sprouted</p>
+        <p class="footer-copy">&copy; 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
